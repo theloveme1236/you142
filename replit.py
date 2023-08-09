@@ -1,11 +1,11 @@
 import os
 os.system('sudo apt update -y')
-os.system('! sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb')
-os.system('! sudo apt install ./google-chrome-stable_current_amd64.deb')
-os.system('! sudo pip install selenium')
-os.system('! sudo pip install pymongo')
-os.system('! sudo pip install webdriver-manager')
-
+os.system('sudo apt install python3-pip -y')
+os.system('sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb')
+os.system('sudo apt install ./google-chrome-stable_current_amd64.deb -y')
+os.system('pip install selenium')
+os.system('pip install pymongo')
+os.system('pip install webdriver_manager')
 import subprocess
 import time
 from selenium.webdriver.common.keys import Keys
@@ -30,7 +30,7 @@ cluster = MongoClient('mongodb+srv://theloveme1238:zx5LtPcgLpcpIh7D@cluster0.pzu
 db = cluster["my_database"]
 collection = db["users"]        
 options = webdriver.ChromeOptions()
-options.add_argument('--headless')
+#options.add_argument('--headless')
 options.add_argument("--no-sandbox")
 options.add_argument('--disable-dev-shm-usage')
 options.add_argument('--lang=en')
